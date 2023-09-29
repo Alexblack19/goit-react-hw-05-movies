@@ -4,7 +4,7 @@ const Movies = () => {
   // useEffect(() => {
   //   //HTTP
   // }, []);
-  return <div>Сторінка пошуку кінофільмів за ключовим словом</div>;
+  return <div>Movies</div>;
 };
 
 export default Movies;
