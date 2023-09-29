@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-const Reviews = () => {
+export const Reviews = () => {
     // useEffect(() => {
     //   //HTTP
     // }, []);
@@ -8,4 +8,3 @@ const Reviews = () => {
     return <div>Reviews: {movieId}</div>;
   };
 
-  export default Reviews
