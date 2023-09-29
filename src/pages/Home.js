@@ -6,7 +6,7 @@ const Home = () => {
   //   //HTTP
   // }, []);
   return (
-    <div>
+    <ul>
       {[
         'movie-trend-1',
         'movie-trend-2',
@@ -16,12 +16,12 @@ const Home = () => {
         'movie-trend-6',
       ].map(movie => {
         return (
-          <Link key={movie} to={`${movie}`}>
-            {movie}
-          </Link>
+          <li key={movie}>
+            <Link to={`${movie}`}>{movie}</Link>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 };
 
