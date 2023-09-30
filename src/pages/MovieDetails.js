@@ -11,6 +11,7 @@ const MovieDetails = () => {
   return (
     <>
       <p>MovieDetails: {movieId}</p>
+      <button type="button" onClick={()=>{}}>Go back</button>
       <ul>
         <li>
           <Link to="cast">Cast</Link>
