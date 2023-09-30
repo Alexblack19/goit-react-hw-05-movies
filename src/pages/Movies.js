@@ -1,6 +1,6 @@
 // import { useEffect } from 'react';
 import { useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 
 const Movies = () => {
   const [moviesSearch, setMoviesSearch] = useState([
@@ -11,6 +11,7 @@ const Movies = () => {
     'movie-search-5',
     'movie-search-6',
   ]);
+  const location = useLocation();
   console.log(setMoviesSearch);
   const [searchParams, setSearchParams] = useSearchParams();
   const movieId = searchParams.get('movieId') ?? '';
