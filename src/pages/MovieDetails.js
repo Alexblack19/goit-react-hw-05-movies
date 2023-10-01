@@ -11,8 +11,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
 
   return (
-    <>
-      <p>MovieDetails: {movieId}</p>
+    <>      
       <Link to={backLinkLocationRef.current}>Go back</Link>
       <ul>
         <li>
