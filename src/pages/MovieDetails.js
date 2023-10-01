@@ -1,27 +1,32 @@
-import { useRef } from 'react';
-
-import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
+import { useRef, useState, useEffect } from 'react';
+import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
+import { getSingleMovie } from '../api/movies-api';
+import { MovieInfo } from 'components/MovieInfo';
 
 const MovieDetails = () => {
   const location = useLocation();
   const backLinkLocationRef = useRef(location.state?.from ?? '/');
-  // useEffect(() => {
-  //   //HTTP
-  // }, []);
-  const { movieId } = useParams();
+  const navigate = useNavigate();
+  const [movie, setMovie] = useState(null);
+  const { movieId } = useParams(); 
+
+  useEffect(() => {
+    const getMovie = async () => {
+      try {
+        const data = await getSingleMovie(movieId);
+        setMovie(data);
+      } catch (error) {
+        navigate('*');
+        console.log(error);
+      }
+    };
+    getMovie();
+  }, [movieId, navigate]);
 
   return (
-    <>      
+    <>
       <Link to={backLinkLocationRef.current}>Go back</Link>
-      <ul>
-        <li>
-          <Link to="cast">Cast</Link>
-        </li>
-        <li>
-          <Link to="reviews">Reviews</Link>
-        </li>
-      </ul>
-      <Outlet />
+      {movie && <MovieInfo movie={movie} />}
     </>
   );
 };

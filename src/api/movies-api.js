@@ -17,9 +17,9 @@ export function getTrendingMovies() {
 //   return getMovies(`/search/movie?api_key=${API_KEY}&query=${query}`);
 // }
 
-// export function getSingleMovie(movieId) {
-//   return getMovies(`/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
-// }
+export function getSingleMovie(movieId) {
+  return getMovies(`/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+}
 
 // export function getMovieCredits(movieId) {
 //   return getMovies(

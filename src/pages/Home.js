@@ -14,9 +14,9 @@ const Home = () => {
         console.log(error);
       }
     }
-
     getMovies();
   }, []);
+  
   return (
     <div>
       <h1>Trending today:</h1>
