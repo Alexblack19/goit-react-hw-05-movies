@@ -1,29 +1,22 @@
-import { NavLink, Outlet } from 'react-router-dom';
-import styled from 'styled-components';
+import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-//==================================
-const StyledLink = styled(NavLink)`
-  color: #212121;
-  &.active {
-    color: orangered;
-  }
-`;
-//==================================
+import { Header, HeaderNavList, HeaderNavLink } from './GlobalStyle';
+
 export const Layout = () => {
   return (
     <div>
-      <header>
+      <Header>
         <nav>
-          <ul>
+          <HeaderNavList>
             <li>
-              <StyledLink to="/">Home</StyledLink>
+              <HeaderNavLink to="/">Home</HeaderNavLink>
             </li>
             <li>
-              <StyledLink to="/movies">Movies</StyledLink>
+              <HeaderNavLink to="/movies">Movies</HeaderNavLink>
             </li>
-          </ul>
+          </HeaderNavList>
         </nav>
-      </header>
+      </Header>
 
       <main>
         <Suspense fallback={<div>Loading...</div>}>
