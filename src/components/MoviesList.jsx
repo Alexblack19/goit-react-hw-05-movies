@@ -1,9 +1,10 @@
 import { useLocation, Link } from 'react-router-dom';
+import {HomeList} from './GlobalStyle'
 
 export const MoviesList = ({ movies }) => {  
   const location = useLocation();
   return (
-    <ul>
+    <HomeList>
       {movies.map(movie => {
         return (
           <li key={movie.id}>
@@ -13,6 +14,6 @@ export const MoviesList = ({ movies }) => {
           </li>
         );
       })}
-    </ul>
+    </HomeList>
   );
 };

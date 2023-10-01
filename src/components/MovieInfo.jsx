@@ -41,6 +41,7 @@ export const MovieInfo = ({ movie }) => {
         </div>
       </div>
       <div>
+        <p>Additional information</p>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>
       </div>
