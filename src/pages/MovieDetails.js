@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
-import { getSingleMovie } from '../api/movies-api';
+import { getMovieDetails } from '../api/movies-api';
 import { MovieInfo } from '../components/MovieInfo';
 
 const MovieDetails = () => {
@@ -8,12 +8,12 @@ const MovieDetails = () => {
   const backLinkLocationRef = useRef(location.state?.from ?? '/');
   const navigate = useNavigate();
   const [movie, setMovie] = useState(null);
-  const { movieId } = useParams(); 
+  const { movieId } = useParams();
 
   useEffect(() => {
     const getMovie = async () => {
       try {
-        const data = await getSingleMovie(movieId);
+        const data = await getMovieDetails(movieId);
         setMovie(data);
       } catch (error) {
         navigate('*');

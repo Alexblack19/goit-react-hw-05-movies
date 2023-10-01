@@ -1,18 +1,17 @@
 import { Suspense } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import poster from 'images/no_movie_pic.png';
+import poster from '../images/no-poster.png';
 import styled from 'styled-components';
-
 
 //==================================
 const Img = styled.img`
-width: 100px;
-height: auto;
+  width: 100px;
+  height: auto;
 `;
 //==================================
 
 export const MovieInfo = ({ movie }) => {
-    console.log(movie);
+  console.log(movie);
   return (
     <>
       <div>
@@ -22,7 +21,7 @@ export const MovieInfo = ({ movie }) => {
               ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
               : poster
           }
-          alt=""          
+          alt=""
         />
         <div>
           <div>
