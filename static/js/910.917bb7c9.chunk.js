@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[910],{910:function(e,t,r){r.r(t),r.d(t,{Cast:function(){return c}});var n=r(689),a=r(184),c=function(){var e=(0,n.UO)().movieId;return(0,a.jsxs)("div",{children:["Cast: ",e]})}}}]);
-//# sourceMappingURL=910.917bb7c9.chunk.js.map
