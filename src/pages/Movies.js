@@ -1,53 +1,38 @@
 // import { useEffect } from 'react';
-import { useState } from 'react';
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+import { getSearchMovies } from '../api/movies-api';
+import { MoviesList } from 'components/MoviesList';
+import { SearchMovies } from 'components/SearchMovies';
 
 const Movies = () => {
-  const [moviesSearch, setMoviesSearch] = useState([
-    'movie-search-1',
-    'movie-search-2',
-    'movie-search-3',
-    'movie-search-4',
-    'movie-search-5',
-    'movie-search-6',
-  ]);
-  const location = useLocation();
-  console.log(setMoviesSearch);
+  const [movies, setMovies] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const movieId = searchParams.get('movieId') ?? '';
+  const query = searchParams.get('query') ?? '';
 
-  // useEffect(() => {
-  //   //HTTP
-  // }, []);
-
-  const updateQueryString = e => {
-    const movieIdValue = e.target.value;
-    if (movieIdValue === '') {
-      return setSearchParams({});
+  useEffect(() => {
+    if (query === null) {
+      return;
     }
-    setSearchParams({ movieId: movieIdValue });
-  };
+    const getMovies = async () => {
+      try {
+        const data = await getSearchMovies(query);
+        setMovies(data.results);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getMovies();
+  }, [query]); 
 
-  const visibleMovies = moviesSearch.filter(movie => movie.includes(movieId));
+  const handleSubmit = searchQuery => {
+    setSearchParams(searchQuery === '' ? {} : { query: searchQuery });
+  };
 
   return (
     <>
-      <div>Movies</div>
-      <form>
-        <input type="text" value={movieId} onChange={updateQueryString} />
-        <button type="submit">Search</button>
-      </form>
-      <ul>
-        {visibleMovies.map(movie => {
-          return (
-            <li key={movie}>
-              <Link to={`${movie}`} state={{ from: location }}>
-                {movie}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <SearchMovies onSubmit={handleSubmit} />
+      {movies && <MoviesList movies={movies} />}
     </>
   );
 };

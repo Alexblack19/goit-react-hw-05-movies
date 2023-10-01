@@ -12,9 +12,9 @@ export function getTrendingMovies() {
   return getMovies(`/trending/movie/day?api_key=${API_KEY}`);
 }
 
-// export function getSearchMovies(query) {
-//   return getMovies(`/search/movie?api_key=${API_KEY}&query=${query}`);
-// }
+export function getSearchMovies(query) {
+  return getMovies(`/search/movie?api_key=${API_KEY}&query=${query}`);
+}
 
 export function getMovieDetails(movieId) {
   return getMovies(`/movie/${movieId}?api_key=${API_KEY}&language=en-US`);
