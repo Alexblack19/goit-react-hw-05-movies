@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { getSingleMovie } from '../api/movies-api';
-import { MovieInfo } from 'components/MovieInfo';
+import { MovieInfo } from '../components/MovieInfo';
 
 const MovieDetails = () => {
   const location = useLocation();
