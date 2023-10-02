@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 export const GlobalStyle = createGlobalStyle`  
 html {
@@ -54,13 +54,8 @@ export const HeaderWrap = styled.div`
   gap: 20px;
 `;
 
-export const Main = styled.main`
-  padding-top: 20px;
-  padding-bottom: 20px;
-`;
-
 export const Container = styled.div`
-  width: 1400px;
+  width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
@@ -91,6 +86,132 @@ export const HeaderNavLink = styled(NavLink)`
   }
 `;
 
-export const HomeList = styled.ul`
+export const Main = styled.main`
+  padding-top: 20px;
+  padding-bottom: 20px;
+`;
+
+export const ListMovies = styled.ul`
+  margin-top: 20px;
+  padding-left: 20px;
   list-style-position: inside;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+  border-radius: 10px;
+`;
+
+export const MovieLink = styled(Link)`
+  font-size: 26px;
+  text-decoration: none;
+  color: #1b1b1d;
+`;
+
+export const MainInfoWrap = styled.div`
+  margin-bottom: 20px;
+  display: flex;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+  border-radius: 10px;
+  overflow: hidden;
+`;
+
+export const ImgPoster = styled.img`
+  width: 360px;
+  height: auto;
+`;
+
+export const InfoWrap = styled.div`
+  padding: 26px;
+`;
+
+export const TitleWrap = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const OverviewWrap = styled.div`
+  margin-bottom: 20px;
+`;
+
+export const TitleMovies = styled.h1`
+  margin-bottom: 10px;
+  font-size: 38px;
+`;
+
+export const SubTitleMovies = styled.h2`
+  margin-bottom: 10px;
+  font-size: 30px;
+`;
+
+export const TextMovie = styled.p`
+  font-size: 20px;
+`;
+
+export const LinkBtn = styled(Link)`
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 150px;
+  height: 40px;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+  border-radius: 5px;
+  color: #2b2b2b;
+  &:hover,
+  :focus {
+    background-color: #a6afb0;
+    color: #000000;
+  }
+`;
+
+export const AddWrap = styled.div`
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+  border-radius: 10px;
+`;
+
+export const AddTitle = styled.p`
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+export const LinkBtnWrap = styled.ul`
+  display: flex;
+  gap: 48px;
+  list-style: none;
+`;
+
+export const CastWrap = styled.ul`
+padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 30px;
+  list-style: none;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+  border-radius: 10px;
+  overflow: hidden;
+`;
+
+export const CastItem = styled.li`
+  flex-basis: calc((100% - 120px) / 5);
+`;
+
+export const Name = styled.p`
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+`;
+
+export const Character = styled.p` 
+  font-size: 20px;
+  text-align: center;
 `;

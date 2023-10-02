@@ -1,19 +1,19 @@
-import { useLocation, Link } from 'react-router-dom';
-import {HomeList} from './GlobalStyle'
+import { useLocation } from 'react-router-dom';
+import {ListMovies, MovieLink} from './GlobalStyle'
 
 export const MoviesList = ({ movies }) => {  
   const location = useLocation();
   return (
-    <HomeList>
+    <ListMovies>
       {movies.map(movie => {
         return (
           <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+            <MovieLink to={`/movies/${movie.id}`} state={{ from: location }}>
               {movie.title}
-            </Link>
+            </MovieLink>
           </li>
         );
       })}
-    </HomeList>
+    </ListMovies>
   );
 };

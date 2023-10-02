@@ -1,21 +1,26 @@
 import { Suspense } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import poster from '../images/no-poster.png';
-import styled from 'styled-components';
-
-//==================================
-const Img = styled.img`
-  width: 100px;
-  height: auto;
-`;
-//==================================
+import {
+  MainInfoWrap,
+  ImgPoster,
+  InfoWrap,
+  TitleWrap,
+  OverviewWrap,
+  TitleMovies,
+  SubTitleMovies,
+  TextMovie,
+  AddWrap,
+  AddTitle,
+  LinkBtn,
+  LinkBtnWrap
+} from './GlobalStyle';
 
 export const MovieInfo = ({ movie }) => {
-  console.log(movie);
   return (
     <>
-      <div>
-        <Img
+      <MainInfoWrap>
+        <ImgPoster
           src={
             movie.poster_path !== null
               ? `https://image.tmdb.org/t/p/original/${movie.poster_path}`
@@ -23,28 +28,38 @@ export const MovieInfo = ({ movie }) => {
           }
           alt=""
         />
-        <div>
-          <div>
-            <h1>
+        <InfoWrap>
+          <TitleWrap>
+            <TitleMovies>
               {movie.title} {`(${movie.release_date.slice(0, 4)})`}
-            </h1>
-            <p>User score: {Math.round(movie.vote_average * 10)}%</p>
-          </div>
+            </TitleMovies>
+            <TextMovie>
+              User score: {Math.round(movie.vote_average * 10)}%
+            </TextMovie>
+          </TitleWrap>
+          <OverviewWrap>
+            <SubTitleMovies>Overview</SubTitleMovies>
+            <TextMovie>{movie.overview}</TextMovie>
+          </OverviewWrap>
           <div>
-            <h2>Overview</h2>
-            <p>{movie.overview}</p>
+            <SubTitleMovies>Genres</SubTitleMovies>
+            <TextMovie>
+              {movie.genres.map(genre => genre.name).join()}
+            </TextMovie>
           </div>
-          <div>
-            <h2>Genres</h2>
-            <p>{movie.genres.map(genre => genre.name).join()}</p>
-          </div>
-        </div>
-      </div>
-      <div>
-        <p>Additional information</p>
-        <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
-      </div>
+        </InfoWrap>
+      </MainInfoWrap>
+      <AddWrap>
+        <AddTitle>Additional information</AddTitle>
+        <LinkBtnWrap>
+          <li>
+            <LinkBtn to="cast">Cast</LinkBtn>
+          </li>
+          <li>
+            <LinkBtn to="reviews">Reviews</LinkBtn>
+          </li>
+        </LinkBtnWrap>
+      </AddWrap>
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>

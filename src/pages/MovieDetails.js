@@ -1,7 +1,9 @@
 import { useRef, useState, useEffect } from 'react';
-import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { getMovieDetails } from '../api/movies-api';
 import { MovieInfo } from '../components/MovieInfo';
+import { LinkBtn } from '../components/GlobalStyle';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const MovieDetails = () => {
   const location = useLocation();
@@ -25,7 +27,10 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
+      <LinkBtn to={backLinkLocationRef.current}>
+        <AiOutlineArrowLeft />
+        Go back
+      </LinkBtn>
       {movie && <MovieInfo movie={movie} />}
     </>
   );

@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieCredits } from '../api/movies-api';
 import profile from '../images/no-person-profile.png';
+import { CastWrap, CastItem, Name, Character } from '../components/GlobalStyle';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -22,10 +23,10 @@ const Cast = () => {
   return (
     <>
       {cast.length ? (
-        <ul>
+        <CastWrap>
           {cast.map(({ name, character, profile_path }) => {
             return (
-              <li key={name}>
+              <CastItem key={name}>
                 <img
                   src={
                     profile_path !== null
@@ -34,12 +35,12 @@ const Cast = () => {
                   }
                   alt={name}
                 />
-                <p>{name}</p>
-                <p>Character: {character}</p>
-              </li>
+                <Name>{name}</Name>
+                <Character>Character: {character}</Character>
+              </CastItem>
             );
           })}
-        </ul>
+        </CastWrap>
       ) : (
         <p>We don't have any cast for this movie.</p>
       )}
