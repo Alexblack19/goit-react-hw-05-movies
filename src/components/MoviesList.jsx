@@ -1,8 +1,8 @@
 import { useLocation } from 'react-router-dom';
-import {ListMovies, MovieLink} from './GlobalStyle'
+import { ListMovies, MovieLink } from './GlobalStyle';
 import PropTypes from 'prop-types';
 
-export const MoviesList = ({ movies }) => {  
+export const MoviesList = ({ movies }) => {
   const location = useLocation();
   return (
     <ListMovies>

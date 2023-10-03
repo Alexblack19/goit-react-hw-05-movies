@@ -32,8 +32,8 @@ p {
 }
 
 img {
-  display: block;
-  max-width: 100%;
+  display: block; 
+  width: 100%;
   height: auto;
 }
 
@@ -55,7 +55,7 @@ export const HeaderWrap = styled.div`
 `;
 
 export const Container = styled.div`
-  width: 1280px;
+  max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 24px;
@@ -115,7 +115,6 @@ export const MainInfoWrap = styled.div`
 
 export const ImgPoster = styled.img`
   width: 360px;
-  height: auto;
 `;
 
 export const InfoWrap = styled.div`

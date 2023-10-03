@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {InputSearch, SearchBtn} from '../components/GlobalStyle'
+import { InputSearch, SearchBtn } from '../components/GlobalStyle';
 import PropTypes from 'prop-types';
 
 export const SearchMovies = ({ onSubmit }) => {

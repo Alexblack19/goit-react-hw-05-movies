@@ -13,7 +13,7 @@ import {
   AddWrap,
   AddTitle,
   LinkBtn,
-  LinkBtnWrap
+  LinkBtnWrap,
 } from './GlobalStyle';
 import PropTypes from 'prop-types';
 

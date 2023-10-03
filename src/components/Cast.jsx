@@ -2,7 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieCredits } from '../api/movies-api';
 import profile from '../images/no-person-profile.png';
-import { CastWrap, CastItem, Name, Character, AnyCast } from '../components/GlobalStyle';
+import {
+  CastWrap,
+  CastItem,
+  Name,
+  Character,
+  AnyCast,
+} from '../components/GlobalStyle';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -24,9 +30,9 @@ const Cast = () => {
     <>
       {cast.length ? (
         <CastWrap>
-          {cast.map(({ name, character, profile_path }) => {
+          {cast.map(({ id, name, character, profile_path }) => {
             return (
-              <CastItem key={name}>
+              <CastItem key={id}>
                 <img
                   src={
                     profile_path !== null
