@@ -260,10 +260,12 @@ export const Author = styled.p`
 export const Content = styled.p`
   margin-bottom: 14px;
   font-size: 18px;
-  
 `;
 export const AnyReviews = styled.p`
   margin-bottom: 14px;
   font-size: 24px;
-  
+`;
+export const AnyCast = styled.p`
+  margin-bottom: 14px;
+  font-size: 24px;
 `;

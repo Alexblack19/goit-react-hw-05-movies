@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getMovieCredits } from '../api/movies-api';
 import profile from '../images/no-person-profile.png';
-import { CastWrap, CastItem, Name, Character } from '../components/GlobalStyle';
+import { CastWrap, CastItem, Name, Character, AnyCast } from '../components/GlobalStyle';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -42,7 +42,7 @@ const Cast = () => {
           })}
         </CastWrap>
       ) : (
-        <p>We don't have any cast for this movie.</p>
+        <AnyCast>We don't have any cast for this movie.</AnyCast>
       )}
     </>
   );
