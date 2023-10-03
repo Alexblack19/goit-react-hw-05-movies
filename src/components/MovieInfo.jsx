@@ -15,6 +15,7 @@ import {
   LinkBtn,
   LinkBtnWrap
 } from './GlobalStyle';
+import PropTypes from 'prop-types';
 
 export const MovieInfo = ({ movie }) => {
   return (
@@ -65,4 +66,15 @@ export const MovieInfo = ({ movie }) => {
       </Suspense>
     </>
   );
+};
+
+MovieInfo.propTypes = {
+  movie: PropTypes.shape({
+    title: PropTypes.string,
+    poster_path: PropTypes.string,
+    release_date: PropTypes.string,
+    vote_average: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+  }).isRequired,
 };

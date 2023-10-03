@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {InputSearch, SearchBtn} from '../components/GlobalStyle'
+import PropTypes from 'prop-types';
 
 export const SearchMovies = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -26,4 +27,8 @@ export const SearchMovies = ({ onSubmit }) => {
       <SearchBtn type="submit">Search</SearchBtn>
     </form>
   );
+};
+
+SearchMovies.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
