@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from '../api/movies-api';
+import { ReviewsList } from '../components/GlobalStyle';
+
 
 const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -21,7 +23,7 @@ const Reviews = () => {
   return (
     <>
       {reviews.length ? (
-        <ul>
+        <ReviewsList>
           {reviews.map(({ author, content }) => {
             return (
               <li key={author}>
@@ -30,7 +32,7 @@ const Reviews = () => {
               </li>
             );
           })}
-        </ul>
+        </ReviewsList>
       ) : (
         <p>We don't have any reviews for this movie.</p>
       )}
