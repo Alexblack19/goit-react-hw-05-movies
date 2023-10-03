@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {InputSearch, SearchBtn} from '../components/GlobalStyle'
 
 export const SearchMovies = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
@@ -15,14 +16,14 @@ export const SearchMovies = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
+      <InputSearch
         onChange={handleChange}
         placeholder={'Enter a movie'}
         value={query}
         name="query"
         type="text"
       />
-      <button type="submit">Search</button>
+      <SearchBtn type="submit">Search</SearchBtn>
     </form>
   );
 };

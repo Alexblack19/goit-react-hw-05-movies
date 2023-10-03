@@ -186,7 +186,7 @@ export const LinkBtnWrap = styled.ul`
 `;
 
 export const CastWrap = styled.ul`
-padding: 10px;
+  padding: 10px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -211,7 +211,37 @@ export const Name = styled.p`
   text-align: center;
 `;
 
-export const Character = styled.p` 
+export const Character = styled.p`
   font-size: 20px;
   text-align: center;
+`;
+
+export const InputSearch = styled.input`
+  margin-right: 10px;
+  padding: 4px;
+  font-size: 22px;
+  width:280px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+`;
+
+export const SearchBtn = styled.button`
+
+font-size: 22px;
+font-weight: 600;
+width: 100px;
+height: 32px;
+  box-shadow: 3px 3px 15px 1px rgba(255, 68, 0, 1);
+  border-radius: 5px;
+  color: #2b2b2b;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 2px;
+  &:hover,
+  :focus {
+    background-color: #a6afb0;
+    color: #000000;
+  }
 `;
