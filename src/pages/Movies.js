@@ -6,7 +6,7 @@ import { MoviesList } from 'components/MoviesList';
 import { SearchMovies } from 'components/SearchMovies';
 
 const Movies = () => {
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
 
@@ -32,7 +32,7 @@ const Movies = () => {
   return (
     <>
       <SearchMovies onSubmit={handleSubmit} />
-      {movies && <MoviesList movies={movies} />}
+      {!movies.length ? null : <MoviesList movies={movies} />}
     </>
   );
 };
