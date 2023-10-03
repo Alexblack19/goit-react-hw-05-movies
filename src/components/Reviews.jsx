@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReviews } from '../api/movies-api';
-import { ReviewsList } from '../components/GlobalStyle';
+import { ReviewsList, Author, Content, AnyReviews } from '../components/GlobalStyle';
 
 
 const Reviews = () => {
@@ -27,14 +27,14 @@ const Reviews = () => {
           {reviews.map(({ author, content }) => {
             return (
               <li key={author}>
-                <p>{author}</p>
-                <p>{content}</p>
+                <Author>{author}</Author>
+                <Content>{content}</Content>
               </li>
             );
           })}
         </ReviewsList>
       ) : (
-        <p>We don't have any reviews for this movie.</p>
+        <AnyReviews>We don't have any reviews for this movie.</AnyReviews>
       )}
     </>
   );
